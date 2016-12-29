@@ -34,8 +34,8 @@ class Alidayu {
         $params['sms_param']         = json_encode($data);
         $params['rec_num']           = $mobile;
         $params['sms_template_code'] = $template;
-        $params['sign']              = Sign::create($params);
         $params                      = array_merge($this->params, $params);
+        $params['sign']              = Sign::create($params);
         $rsp                         = Http::post(self::GATEWAY, $params);
         $rsp                         = json_decode($rsp, true);
         if (isset($rsp['alibaba_aliqin_fc_sms_num_send_response']['result']['success']) && $rsp['alibaba_aliqin_fc_sms_num_send_response']['result']['success'] == 'true') {
