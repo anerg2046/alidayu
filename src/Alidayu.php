@@ -1,14 +1,14 @@
 <?php
 
-if (!defined('NOW_TIME')) {
-    define('NOW_TIME', time());
-}
-
 namespace anerg\Alidayu;
 
 use anerg\Alidayu\Util\Sign;
 use anerg\Alidayu\Util\Http;
 use anerg\Alidayu\Util\Exception;
+
+if (!defined('NOW_TIME')) {
+    define('NOW_TIME', time());
+}
 
 class Alidayu {
 
