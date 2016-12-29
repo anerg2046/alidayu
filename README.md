@@ -16,13 +16,13 @@ composer require anerg2046/alidayu
 
 namespace app\common\service;
 
-use anerg\Alidayu\Sms;
+use anerg\Alidayu\SmsGateWay;
 
 class Sms {
 
     public function send_code($mobile) {
         $code = mt_rand(1000, 9999);
-        $AliSMS = new Sms();
+        $AliSMS = new SmsGateWay();
         $AliSMS->send($mobile, ['code'=>$code], 'SMS_10210103');
     }
 

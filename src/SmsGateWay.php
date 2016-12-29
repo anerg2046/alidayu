@@ -10,7 +10,7 @@ if (!defined('NOW_TIME')) {
     define('NOW_TIME', time());
 }
 
-class Sms {
+class SmsGateWay {
 
     const GATEWAY = 'https://eco.taobao.com/router/rest';
 
