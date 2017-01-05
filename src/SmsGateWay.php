@@ -1,14 +1,14 @@
 <?php
 
+/**
+ * 阿里大鱼短信发送
+ * @author Coeus <r.anerg@gmail.com>
+ */
+
 namespace anerg\Alidayu;
 
 use anerg\Alidayu\Util\Sign;
-use anerg\Alidayu\Util\Http;
-use anerg\Alidayu\Util\Exception;
-
-if (!defined('NOW_TIME')) {
-    define('NOW_TIME', time());
-}
+use anerg\helper\Http;
 
 class SmsGateWay {
 
@@ -51,7 +51,7 @@ class SmsGateWay {
                 default :
                     $error_msg = '短信系统异常';
             }
-            throw new Exception($error_msg, $rsp['error_response']['code']);
+            exception($error_msg, $rsp['error_response']['code']);
         }
     }
 

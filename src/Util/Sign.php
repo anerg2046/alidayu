@@ -1,14 +1,17 @@
 <?php
 
-namespace anerg\Alidayu\Util;
+/**
+ * 签名方法
+ * @author Coeus <r.anerg@gmail.com>
+ */
 
-use anerg\Alidayu\Util\Exception;
+namespace anerg\Alidayu\Util;
 
 class Sign {
 
     public static function create($params) {
         if (!$params || count($params) < 1) {
-            throw new Exception('参与签名的参数不能为空');
+            exception('参与签名的参数不能为空');
         }
         ksort($params);
         $param_str = self::buildParams($params);
